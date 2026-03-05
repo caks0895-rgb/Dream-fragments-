@@ -1,0 +1,26 @@
+{
+  "accountAssociation": {
+    "header": "REPLACE_WITH_HEADER_FROM_WARPCAST_TOOL",
+    "payload": "REPLACE_WITH_PAYLOAD_FROM_WARPCAST_TOOL",
+    "signature": "REPLACE_WITH_SIGNATURE_FROM_WARPCAST_TOOL"
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "DreamFragment",
+    "homeUrl": "REPLACE_WITH_YOUR_VERCEL_URL",
+    "iconUrl": "REPLACE_WITH_YOUR_VERCEL_URL/icon.png",
+    "splashImageUrl": "REPLACE_WITH_YOUR_VERCEL_URL/splash.png",
+    "splashBackgroundColor": "#0a0710",
+    "subtitle": "Dream NFTs on Base",
+    "description": "Capture your dreams as AI-generated NFT fragments on Base. Describe your dream, generate art, and mint it on-chain.",
+    "tagline": "Mint your dreams on Base",
+    "primaryCategory": "art-creativity",
+    "tags": ["nft", "dreams", "ai", "base", "art"],
+    "heroImageUrl": "REPLACE_WITH_YOUR_VERCEL_URL/images/hero-bg.jpg",
+    "ogTitle": "DreamFragment",
+    "ogDescription": "Capture your dreams as AI-generated NFT fragments on Base.",
+    "ogImageUrl": "REPLACE_WITH_YOUR_VERCEL_URL/images/hero-bg.jpg",
+    "requiredChains": ["eip155:8453"],
+    "noindex": false
+  }
+}
