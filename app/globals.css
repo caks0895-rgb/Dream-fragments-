@@ -1,0 +1,128 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  --background: oklch(0.07 0.025 285);
+  --foreground: oklch(0.95 0.012 290);
+  --card: oklch(0.11 0.03 285);
+  --card-foreground: oklch(0.95 0.012 290);
+  --popover: oklch(0.10 0.03 285);
+  --popover-foreground: oklch(0.95 0.012 290);
+  --primary: oklch(0.60 0.24 292);
+  --primary-foreground: oklch(0.98 0.005 290);
+  --secondary: oklch(0.18 0.04 285);
+  --secondary-foreground: oklch(0.90 0.01 290);
+  --muted: oklch(0.16 0.03 285);
+  --muted-foreground: oklch(0.55 0.07 285);
+  --accent: oklch(0.76 0.16 196);
+  --accent-foreground: oklch(0.07 0.02 285);
+  --destructive: oklch(0.50 0.22 28);
+  --destructive-foreground: oklch(0.95 0.01 30);
+  --border: oklch(0.22 0.05 285);
+  --input: oklch(0.16 0.04 285);
+  --ring: oklch(0.60 0.24 292);
+  --radius: 0.75rem;
+
+  /* Custom dream tokens */
+  --neon-purple: oklch(0.62 0.28 292);
+  --neon-cyan: oklch(0.82 0.18 196);
+  --surface-1: oklch(0.13 0.035 285);
+  --surface-2: oklch(0.17 0.04 285);
+  --glow-purple: 0 0 20px oklch(0.62 0.28 292 / 0.5);
+  --glow-cyan: 0 0 20px oklch(0.82 0.18 196 / 0.5);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  .text-glow-purple {
+    text-shadow: 0 0 12px oklch(0.62 0.28 292 / 0.8);
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 12px oklch(0.82 0.18 196 / 0.8);
+  }
+  .border-glow-purple {
+    border-color: oklch(0.60 0.24 292 / 0.6);
+    box-shadow: 0 0 12px oklch(0.60 0.24 292 / 0.25), inset 0 0 12px oklch(0.60 0.24 292 / 0.05);
+  }
+  .border-glow-cyan {
+    border-color: oklch(0.76 0.16 196 / 0.6);
+    box-shadow: 0 0 12px oklch(0.76 0.16 196 / 0.25), inset 0 0 12px oklch(0.76 0.16 196 / 0.05);
+  }
+  .dream-card {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+    background: linear-gradient(135deg, oklch(0.13 0.04 285) 0%, oklch(0.10 0.025 285) 100%);
+  }
+  .star-field {
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, oklch(0.85 0.05 285 / 0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 40% 70%, oklch(0.80 0.08 196 / 0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 60% 20%, oklch(0.82 0.06 292 / 0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 60%, oklch(0.85 0.05 285 / 0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 10% 80%, oklch(0.80 0.05 285 / 0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 10%, oklch(0.80 0.08 196 / 0.4) 0%, transparent 100%);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.35 0.08 285);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.50 0.16 292);
+}
